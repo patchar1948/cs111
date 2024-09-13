@@ -18,7 +18,7 @@ def word_count(text: str) -> dict[str, int]:
     for i in no_mark:
         if i in d:
             d[i] += 1
-        else:
+        else: 
             d[i] = 1
     # print(len(d))
     return d    
