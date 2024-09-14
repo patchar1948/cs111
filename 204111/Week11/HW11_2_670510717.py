@@ -24,6 +24,7 @@ def split_and_merge(n: int) -> list[int]:
 
     res = set()
     for ps in bus:
+        
     
     print(bus)
 
