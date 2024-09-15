@@ -45,14 +45,20 @@ def arrival_sequences(l_lane: tuple[str], r_lane: tuple[str], result = [], st_l 
 
 def split_and_merge(n: int) -> list[str]:
     ps = sorted(power_set(n), key = lambda x: len(x))
-    return(ps)
-    # result = ps[-1]
-    # for i in range(1, (2 ** n) - 1):
-    #     if 
-    #     temp = list(filter(lambda x:  and n - len(ps[i])))
+    # return(ps)
+    
+    def mergee(index, result):
+        if index == len(ps) - 1:
+            return list(set(result))
+        # แบ่งเป็น 2 เลน
+        l_lane = tuple(str(x) for x in ps[index]) # สร้าง lane ซ้าย
+        r_lane= tuple(str(x) for x in range(1, n + 1) if x not in ps[index]) # สร้างเลนขวาที่ไม่มี ตัวด้านซ้าย
 
+        new_result = arrival_sequences(l_lane, r_lane)
+        return mergee(index + 1, result + new_result)
+
+    return mergee(0, [])
 
  
-
 if __name__ == '__main__':
-    print(split_and_merge(3))
+    print(split_and_merge(4))
