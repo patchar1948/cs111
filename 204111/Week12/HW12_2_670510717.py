@@ -16,15 +16,35 @@ def main():
 
 def read_input():
     treasures = {}
+    i = 1
     for line in sys.stdin:
-        print(line)
-
+        if line[0] == '#':
+            continue
+        l_s = line.split(',')
+        l_s = list(map(lambda x: x.strip(',\r\n '), l_s))
+        if l_s[1] in treasures:
+            treasures[l_s[1]] += [(l_s[0], int(l_s[2]))]
+        else:
+            treasures[l_s[1]] = [(l_s[0], int(l_s[2]))]
+    
+        # print("round", i)
+        # print(l_s)
+        # i += 1
+    # print(treasures)
     return treasures
 
 
 def total_value(treasure_type, treasures):
     total = 0
+    if treasure_type in treasures:
+        for i in treasures[treasure_type]:
+            total += i[1]
+        
 
+    else:
+        total = -1
+
+    # print(total)
     return total
 
 

@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# Patcharin Mekchang (Noon)
+# 670510717
+# Extra_11
+# 204111 sec 003
 def main():
     test_meeny()
 def eeny_meeny(name_list: list[str], rhyme_len: int=4) -> str:
