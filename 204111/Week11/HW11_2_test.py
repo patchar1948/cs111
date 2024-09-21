@@ -5,8 +5,8 @@
 # 204111 Sec 003
 # TA 65-P'Ta
 
-# def main():
-#     split_and_merge(5)
+def main():
+    print(split_and_merge(5))
 
 def power_set(n: int, p_s_l = [[]], index_ = 1):
     if index_ > n:
@@ -61,4 +61,5 @@ def split_and_merge(n: int) -> list[str]:
 
  
 if __name__ == '__main__':
-    print(split_and_merge(4))
+    main()
+    # print(split_and_merge(4))

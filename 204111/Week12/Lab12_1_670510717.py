@@ -10,8 +10,8 @@ def main():
         #display_calendar(i, 2023)
         pass
     # print('2, 2020')
-    display_calendar(2,2024)
-    display_calendar(2,2023)
+    display_calendar(12,1999)
+    # display_calendar(2,2023)
     # print('2, 2021')
     # display_calendar(2,2021)
     # print('2, 2022')

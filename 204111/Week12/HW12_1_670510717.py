@@ -25,9 +25,6 @@ def scramble(word: str) -> list[str]:
         # loop หยิบของจาก result
         # สร้าง range ที่มากกว่า len ของ result ในรอบนั้น
         # map insert ตัวอักษรด้วย range ที่สร้าง
-    
-    
-
 
 if __name__ == '__main__':
     main()

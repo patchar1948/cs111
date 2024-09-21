@@ -11,15 +11,15 @@ def word_count(text: str) -> dict[str, int]:
     mark = '''!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~'''
     text = text.lower()
     d = dict()
-    list_text = text.split()
+    list_text = text.split() # แยกแต่ละคำด้วยช่องว่าง
     # print(list_text)
-    no_mark = list(map(lambda x: x.strip(mark), list_text))
+    no_mark = list(map(lambda x: x.strip(mark), list_text)) # เอาเครื่องหมายวรรคตอนที่ล้อมรอบแต่ละคำออก
     # print(no_mark)
-    for i in no_mark:
+    for i in no_mark: 
         if i in d:
-            d[i] += 1
+            d[i] += 1 # ถ้ามีคำนั้นอยู่แล้วให้บวกคำนั้นไปอีก 1 คำ
         else: 
-            d[i] = 1
+            d[i] = 1 # ถ้าไม่มีคำนั้นให้เพิ่มคำนั้นลงไปใน d
     # print(len(d))
     return d    
 

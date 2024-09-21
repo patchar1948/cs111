@@ -59,17 +59,7 @@ def split_and_merge(n: int) -> list[str]:
         result = list(set(new_result + result))
     # print(result)
     return result
-    # def mergee(index, result):
-    #     if index == len(ps) - 1:
-    #         return result
-    #     # แบ่งเป็น 2 เลน
-    #     l_lane = tuple(str(x) for x in ps[index]) # สร้าง lane ซ้าย
-    #     r_lane= tuple(str(x) for x in range(1, n + 1) if x not in ps[index]) # สร้างเลนขวาที่ไม่มี ตัวด้านซ้าย
-    #     new_result = arrival_sequences(l_lane, r_lane)
-    #     # print(new_result)
-    #     return mergee(index + 1, list(set(result + new_result)))
 
-    # return mergee(0, [])
 
  
 if __name__ == '__main__':

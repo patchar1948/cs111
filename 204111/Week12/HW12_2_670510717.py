@@ -39,14 +39,10 @@ def total_value(treasure_type, treasures):
     if treasure_type in treasures:
         for i in treasures[treasure_type]:
             total += i[1]
-        
-
     else:
         total = -1
-
     # print(total)
     return total
-
 
 if __name__ == '__main__':
     main()
