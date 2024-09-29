@@ -33,118 +33,54 @@
 
 def main():
     print(sand_towers([8, 8, 8, 8]))
-    print(sand_towers([7, 8, 6, 8]))
-    # print(sand_towers([7, 6, 8, 8]))
-    # print(sand_towers([6, 7, 8, 8]))
-    # print(sand_towers([8, 7, 6, 8]))
+    print(sand_towers([5, 8, 6, 8]))
+    print(sand_towers([7, 6, 8, 8]))
+    print(sand_towers([6, 7, 8, 8]))
+    print(sand_towers([8, 7, 6, 8]))
 
 def sand_towers(list_a: list[int]) -> str:
     # หาความสูงที่สูงที่สุด
     max_height = max(list_a)
     # จำนวนที่ต้องสร้าง sand tower
-    # num_towers = len(list_a) 
-
+    num_towers = len(list_a) 
 
     # สร้าง list ว่างไว้ตามจำนวนสูงสุด
     result = []
     for i in range(max_height + 2):
         l_b = ' '
         result += [l_b]
-    
-    # result[0] += "--"
-    # print(result)
-    for i in range(len(list_a)):
-        # ก่อนสุดท้าย
-        if i != len(list_a) - 1:
-            # สร้างฐานปราสาท
-            tail = ('/' + (((2 * list_a[i])) * ':'))
-            # สร้างบรรทัดว่าง
-            if list_a[i] < max_height:
-                for k in range(max_height - list_a[i] + 2):
-                    result[k] += ' ' * (len(tail) + 1)
-                    # print(result)
 
-                
-            else:
-                # สร้างธง
-                flag = ''
-                if list_a[i] == max_height:
-                    result[0] += ((list_a[i]) * ' ') + '|>>~' + ((list_a[i] - 3) * ' ')
-                    result[1] += (((list_a[i]) * ' ') + '|') + ((list_a[i]) * ' ')
-                    k = 1
-
-            # สร้างยอดปราสาท
-            result[k+1] += (((list_a[i] - 2) * ' ') + '/^^^\\' + ((list_a[i] - 2) * ' '))
-            result[k+2] += (((list_a[i] - 3) * ' ') + '/     \\' + ((list_a[i] - 3) * ' '))
-            result[k+3] += (((list_a[i] - 4) * ' ') + '/^^^^^^^\\' +((list_a[i] - 4) * ' '))
-            # head = (((i - 1) * ' ') + '/^^^\\') + '\n' + (((i - 2) * ' ') + '/     \\') + '\n'  + (((i - 3) * ' ') + '/^^^^^^^\\') + '\n'
-            # # print(head)
-
-            # สร้างตัวปราสาท
-            # sand = []
-            k += 4
-            for j in range(k-1, list_a[i]):
-                # sand.append(('/' + (((2*i) - ((2 * j) + 1)) * ' ') + '\\'))
-                if j == list_a[i] - 1:
-                    result[j+1] += ((((list_a[i] - j - 1) * ' ') + '/' + (((2 * j) + 1) * ' ') + '\\' + ((list_a[i] - j - 1) * ' ')))
-                else:
-                    result[j+1] += ((((list_a[i] - j) * ' ') + '/' + (((2 * j) + 1) * ' ') + '\\' + ((list_a[i] - j - 1) * ' ')))
-            
-            result[-1] += tail
-        # รอบสุดท้าย
+    # สร้างปราสาท
+    for i in list_a:
+        # สร้างส่วนบนของปราสาท
+        index = 0
+        if i == max_height:
+            result[0] += (i * ' ') + '|>>~' + ((i - 3) * ' ')
+            result[1] += (i * ' ') + '|' + ((i) * ' ')
+            index = 2
         else:
-            # สร้างฐานปราสาท
-            tail = ('/' + (((2 * list_a[i]) + 1) * ':' + '\\'))
-            # สร้างบรรทัดว่าง
-            if list_a[i] < max_height:
-                for k in range(max_height - list_a[i] + 2):
-                    result[k] += ' ' * (len(tail) - 1)
-                    # print(result)
+            for index in range(max_height - i + 2):
+                result[index] += (i*2 + 1) * ' '
+            index += 1
+        # สร้าง 3 บรรทัดแรก
+        result[index] += (((i - 2) * ' ') + '/^^^\\' + ((i - 2) * ' '))
+        result[index + 1] += (((i - 3) * ' ') + '/     \\' + ((i - 3) * ' '))
+        result[index + 2] += (((i - 4) * ' ') + '/^^^^^^^\\' +((i - 4) * ' '))
 
-                
-            else:
-                # สร้างธง
-                flag = ''
-                if list_a[i] == max_height:
-                    result[0] += ((list_a[i]) * ' ') + '|>>~'
-                    result[1] += (((list_a[i]) * ' ') + '|')
-                    k = 1
+        index += 3
 
-            # สร้างยอดปราสาท
-            result[k+1] += (((list_a[i] - 2) * ' ') + '/^^^\\')
-            result[k+2] += (((list_a[i] - 3) * ' ') + '/     \\')
-            result[k+3] += (((list_a[i] - 4) * ' ') + '/^^^^^^^\\')
-            # head = (((i - 1) * ' ') + '/^^^\\') + '\n' + (((i - 2) * ' ') + '/     \\') + '\n'  + (((i - 3) * ' ') + '/^^^^^^^\\') + '\n'
-            # # print(head)
+        # สร้าางตัวปราสาท (ตั้งแต่บรรทัดที่ 4)
+        for j in range(4, i):
+            result[index] += ((i - (j + 1)) * ' ') + '/' + (((2 * j) + 1) * ' ') + '\\' + ((i - (j + 1)) * ' ')
+            index += 1
 
-            # สร้างตัวปราสาท
-            # sand = []
-            k += 4
-            for j in range(k-1, list_a[i]):
-                if j == list_a[i] - 1:
-                    result[j+1] += ((((list_a[i] - j - 1) * ' ') + '/' + (((2 * j) + 1) * ' ') + '\\' + ((list_a[i] - j - 2) * ' ')))
-                else:
-                    result[j+1] += ((((list_a[i] - j - 1) * ' ') + '/' + (((2 * j) + 1) * ' ') + '\\' + ((list_a[i] - j - 2) * ' ')))
-            
-            result[-1] += tail
+        # สร้างฐานปราสาท
+        result[index] += ('/' + (((2 * i)) * ':'))
 
-    # result[max_height-2] = ' ' + result[max_height-2] 
     # ประกอบปราสาท
-    result[-1] = result[-1].strip(' ')
+    result[-1] = result[-1].strip(' ') + ':\\'
     result = '\n' + '\n'.join(result)
     return result
-
-    # print('flag:', flag)
-    # print('head:', head)
-    # print('sand:', sand)
-    # print('tail:', tail)
-
-    
-    # result = flag + head + sand + tail
-    # ['\n'.join(result) + '\n']
-
-    # print(result)
-    
     
 if __name__ == '__main__':
     main()

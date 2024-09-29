@@ -6,7 +6,9 @@ def powerset(set_a: set[int]) -> list[set[int]]:
     for i in set_a:
         with_2 = list(map(lambda x: x | {i}, a))
         a += with_2
-
+        print("i:",i)
+        print("with_2:", with_2)
+        print("a:", a)
     # if DEBUG:
     #     print(a)
     # return a
