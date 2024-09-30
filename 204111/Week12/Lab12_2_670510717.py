@@ -24,9 +24,6 @@ def multiply_polynomials(p1: list[int], p2: list[int]) -> list[int]:
                 dict_poly[power] += coef
             else:
                 dict_poly[power] = coef
-            # i += 1
-            # j += 1
-    # print(dict_poly)
     result = list(map(lambda x: x[1], dict_poly.items()))[::-1]
     # result = list(zip(coef, power))
     # result = list(filter(lambda x: x[0] != 0, result))

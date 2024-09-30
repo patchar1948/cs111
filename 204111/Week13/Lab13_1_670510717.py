@@ -12,16 +12,17 @@ def main():
     assert (matrix_mult([[1,2,3,4]],[[5],[6],[7],[8]])) == [[70]]
     assert (matrix_mult([[1,0,2],[-1,3,1]],[[3,1],[2,1],[1,0]])) == [[5,1],[4,2]]
     assert (matrix_mult([[21], [19], [47], [33], [1]],[[63, 1, 65, 47, 18], [75, 29, 97, 96, 3]])) == None
+    print("aaa")
 
 
 def matrix_mult(m1: list[list[int]], m2: list[list[int]]) -> list[list[int]]:
     for row in m1:
         if len(row) != len(m2):
             return None
-    temp = []
-    sum_temp = []
-    result = []
-    c = []
+    temp, result, sum_temp, c  = [], [], [], []
+    # sum_temp = []
+    # result = []
+    # c = []
 
     for i in range(len(m1)):
         for j in range(len(m2[0])):    

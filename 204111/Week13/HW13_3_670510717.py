@@ -30,12 +30,8 @@ def sum_d_product(m: list[list[int]]) -> int:
         left_down = list(map(lambda x: down[x][:n // 2], range(len(down))))
         right_down = list(map(lambda x: down[x][n // 2:], range(len(down))))
 
-        return sum_d_product([[sum_d_product(left_up), sum_d_product(right_up)], [sum_d_product(left_down), sum_d_product(right_down)]])
-
-
-
-
-
+        return sum_d_product([[sum_d_product(left_up), sum_d_product(right_up)], 
+        [sum_d_product(left_down), sum_d_product(right_down)]])
 
 
 if __name__ == '__main__':

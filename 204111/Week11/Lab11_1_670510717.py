@@ -4,11 +4,13 @@
 # Lab11_1
 # 204111 Sec 003
 
+
+import string
 def main():
     print(word_count("He doesn't want to pay $40,000 for a new car, but his wife doesn't seem to care."))
 
 def word_count(text: str) -> dict[str, int]:
-    mark = '''!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~'''
+    mark = string.punctuation
     text = text.lower()
     d = dict()
     list_text = text.split() # แยกแต่ละคำด้วยช่องว่าง

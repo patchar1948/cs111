@@ -6,7 +6,7 @@
 # TA 65-P'Ta
 
 def main():
-    print(split_and_merge(5))
+    print(split_and_merge(3))
 
 def power_set(n: int, p_s_l = [[]], index_ = 1):
     if index_ > n:

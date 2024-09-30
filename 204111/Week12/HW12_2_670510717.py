@@ -17,6 +17,8 @@ def main():
 def read_input():
     treasures = {}
     i = 1
+    # temp = list(sys.stdin)
+    # print(temp)
     for line in sys.stdin:
         if line[0] == '#':
             continue
