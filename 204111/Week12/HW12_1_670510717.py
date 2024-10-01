@@ -10,9 +10,9 @@ def main():
 
 def scramble(word: str) -> list[str]:
 
-    result = [word[0]]
-    c_i = 1
-    while c_i < len(word):
+    result = [word[0]] # choose first word
+    c_i = 1 # index เริ่มต้น
+    while c_i < len(word): 
         temp = []
         for i in result:
             temp += (list(map(lambda x: i[:x] + word[c_i] + i[x:], range(c_i + 1))))

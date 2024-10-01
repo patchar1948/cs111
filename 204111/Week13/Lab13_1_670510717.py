@@ -25,7 +25,7 @@ def matrix_mult(m1: list[list[int]], m2: list[list[int]]) -> list[list[int]]:
     # c = []
 
     for i in range(len(m1)):
-        for j in range(len(m2[0])):    
+        for j in range(len(m2[0])):    # ลูปตามจำนวนก้อน2
             for k in range(len(m2)):
                 a = m1[i][k]* m2[k][j]
                 temp += [a]

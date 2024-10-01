@@ -31,6 +31,7 @@ def powerset(dict_a: dict[str, tuple[float, float]]) -> list[dict[str, tuple[flo
         with_2 = list(map(lambda x: x | {i: [dict_a[i][0], dict_a[i][1]]}, a))
         # print("with_2:", with_2)
         a += with_2
+    print(a)
         # print("a:", a)
 
     return a

@@ -16,9 +16,9 @@ def square_matrix(list_x: list[list[int]]):
     # print(maxy)
     for i in range(maxy):
         while len(list_x) < maxy:
-            list_x.append([0])
+            list_x.append([0]) # เติมแถว
         while len(list_x[i]) < maxy:
-            list_x[i].append(0 * (maxy))
+            list_x[i].append(0 * (maxy)) # เติมหลัก
         # list_x[i].append(0 * (maxy - len(list_x[i])))
     # print(list_x)
 

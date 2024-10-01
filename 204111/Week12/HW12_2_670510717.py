@@ -12,11 +12,12 @@ def main():
 
     assert total_value('Gold', treasures) == 1090
     assert total_value('Ruby', treasures) == -1
+    print("all ok")
 
 
 def read_input():
-    treasures = {}
-    i = 1
+    treasures = dict()
+    # i = 1
     # temp = list(sys.stdin)
     # print(temp)
     for line in sys.stdin:
