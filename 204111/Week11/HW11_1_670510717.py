@@ -38,13 +38,13 @@ def words_to_num(words: str) -> int:
     return sum_num
     
 def test():
-    print(words_to_num("fourteen")) # 14
-    print(words_to_num("two hundred forty-eight")) # 248
-    print(words_to_num("one hundred eleven")) # 111
-    print(words_to_num("five hundred fifty-two")) # 552
-    print(words_to_num("three thousand four hundred fifty-two")) # 3452
-    print(words_to_num("forty-two billion six hundred forty-one million three hundred twenty-three thousand eight hundred sixty-two")) # 42641323862
+    assert(words_to_num("fourteen")) == 14 # 14
+    assert(words_to_num("two hundred forty-eight")) == 248 # 248
+    assert(words_to_num("one hundred eleven")) == 111 # 111
+    assert(words_to_num("five hundred fifty-two")) == 552 # 552
+    assert(words_to_num("three thousand four hundred fifty-two")) == 3452 # 3452
+    assert(words_to_num("forty-two billion six hundred forty-one million three hundred twenty-three thousand eight hundred sixty-two")) == 42641323862 # 42641323862
     print("Let's go to sleesp")
 
 if __name__ == "__main__":
-    main()
+    main()  
